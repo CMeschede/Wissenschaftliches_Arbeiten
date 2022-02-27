@@ -1,14 +1,5 @@
 # Aufgabe 1
-
-
-len_data = 100
-
 set.seed(1234)
-alter <- round(rnorm(len_data, 25, 2))
-
-fach <- sample(c("Statistik", "Data Science", "Mathe", "Informatik"),
-               len_data, replace = TRUE, prob = c(0.35, 0.35, 0.1, 0.2))
-table(fach)
 
 interess_math <- function(fach,len_data) {
   inter_math <- 1:len_data
@@ -21,9 +12,6 @@ interess_math <- function(fach,len_data) {
   return(inter_math)
 }
 
-inter_math <- interess_math(fach,len_data)
-
-
 interess_prog <- function(fach,len_data) {
   inter_prog <- 1:len_data
   for (i in 1:len_data) {
@@ -34,9 +22,6 @@ interess_prog <- function(fach,len_data) {
   }
   return(inter_prog)
 }
-
-inter_prog <- interess_prog(fach,len_data)
-
 
 mathe_lk <- function(fach,len_data) {
   math_lk <- 1:len_data
@@ -53,6 +38,16 @@ mathe_lk <- function(fach,len_data) {
   return(math_lk)
 }
 
+
+# Default länge für das DataFrame
+len_data = 100
+
+alter <- round(rnorm(len_data, 25, 2))
+fach <- sample(c("Statistik", "Data Science", "Mathe", "Informatik"),
+               len_data, replace = TRUE, prob = c(0.35, 0.35, 0.1, 0.2))
+
+inter_math <- interess_math(fach,len_data)
+inter_prog <- interess_prog(fach,len_data)
 math_lk <- mathe_lk(fach,len_data)
 
 daten <- data.frame(alter, fach, inter_math, inter_prog, math_lk)
