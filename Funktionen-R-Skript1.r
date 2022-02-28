@@ -28,7 +28,7 @@ functionB <- function(x){
 
 functionC <- function(daten){
   #deskriptive bivariate Statistik zwischen Kategorien
-  #benötigt die ganze CSV
+  #benötigt die ganze CSV Datei
   matrix_fach  <- model.matrix(~ fach -1 , daten)
   matrix_math_lk  <- model.matrix(~ math_lk -1 , daten)
   matrix_inter_prog <- model.matrix(~ inter_prog -1, daten)
@@ -50,7 +50,7 @@ functionD <- function(metrisch, dichto){
 }
 
 #Funktion E teilt ordinale daten in drei 0-33%, 34-66%, 67-100%
-#quantile auf und labelt sie "niedrig", "mittel" und "hoch"
+#Quantile auf und labelt sie "niedrig", "mittel" und "hoch"
 functionE <- function(vector){
 
   result <- cut(vector,c(min(vector)-1,floor(quantile(vector, 0.33)),
