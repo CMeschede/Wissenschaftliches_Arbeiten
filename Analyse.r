@@ -53,6 +53,19 @@ functionA(daten$inter_math[which(daten$math_lk == "Nein")])
 ##
 
 
+##  analyse des interesses am programmieren bei leuten, die keines an Mathe haben
+functionB(functionE(daten$inter_prog[
+  which(functionE(daten$inter_math) == "niedrig")]))
 
+##  analyse des interesses am programmieren bei leuten, die 
+##  mittleres bis hohes an Mathe haben
+functionB(functionE(daten$inter_prog[
+  which(!(functionE(daten$inter_math) == "niedrig"))]))
+
+## keine person hat ein hohes interesse am Programmieren, wenn sie ein niedriges 
+## interesse an Mathe hat
+
+## interesse an Mathe und Programmieren scheint warscheinlich, weitere Analyse 
+## Notwendig
 
 
