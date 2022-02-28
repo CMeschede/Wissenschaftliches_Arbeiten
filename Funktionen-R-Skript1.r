@@ -18,5 +18,11 @@ functionA <- function(x){
   cat(paste(toString(quantile(x,0.90)),"\n"))
 }
 
-
+## Deskriptive statistiken fuer kategorielle merkmale
+functionB <- function(x){
+  modex = getmode(x) ## aus Funktionen-R-Skript2
+  cat(paste("Modus: ",toString(modex),"\n"))
+  cat("Haeufigkeiten: \n")
+  table(x)
+}
 
