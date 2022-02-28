@@ -35,7 +35,22 @@ functionA(daten$inter_math)
 ##
 
 
+##vergleich von Mathe interesse bei personen die MatheLK haben
+functionA(daten$inter_math[which(daten$math_lk == "Ja")])
 
+##vergleich von Mathe interesse bei personen die keinen MatheLK haben
+functionA(daten$inter_math[which(daten$math_lk == "Nein")])
+
+##
+##  Arr.Mittel:
+##  LK: 3,51    kein LK: 2,51
+##  
+##  Median: 
+##  LK: 4       Kein LK: 2
+##
+##
+## => leute mit Mathe LK haben größeres interesse an Mathe als leute ohne mathe LK
+##
 
 
 
