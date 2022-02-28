@@ -58,3 +58,10 @@ functionE <- function(vector){
                          labels=c("niedrig","mittel","hoch"))
   return(result)
 }
+
+#Funktion F erstellt eine geeignete Visualisierung von drei oder vier kategorialen Variablen
+library(ggplot2) 
+functionF <- function(daten) {
+   ggplot(daten, aes(x=reorder(data, data, function(x)-length(x)))) + geom_bar(fill='blue') +  labs(x='Visualisierung')
+}                            
+
