@@ -49,3 +49,12 @@ functionD <- function(metrisch, dichto){
   print(cor(metrisch, dichto_transform))
 }
 
+#Funktion E teilt ordinale daten in drei 0-33%, 34-66%, 67-100%
+#quantile auf und labelt sie "niedrig", "mittel" und "hoch"
+functionE <- function(vector){
+
+  result <- cut(vector,c(min(vector)-1,floor(quantile(vector, 0.33)),
+                         floor(quantile(vector, 0.66)),max(vector)+1),
+                         labels=c("niedrig","mittel","hoch"))
+  return(result)
+}
