@@ -26,3 +26,18 @@ functionB <- function(x){
   table(x)
 }
 
+functionC <- function(daten){
+  #deskriptive bivariate Statistik
+  matrix_fach  <- model.matrix(~ fach -1 , daten)
+  matrix_math_lk  <- model.matrix(~ math_lk -1 , daten)
+  matrix_inter_prog <- model.matrix(~ inter_prog -1, daten)
+  matrix_inter_math <-model.matrix(~ inter_math-1, daten)
+  
+  print("Korrelationsmatritzen: ")
+  cat("\n")
+  print(cor(matrix_fach, matrix_inter_math))
+  cat("\n")
+  print(cor(matrix_fach, matrix_inter_prog))
+  cat("\n")
+  print(cor(matrix_fach, matrix_math_lk))
+}
