@@ -27,7 +27,8 @@ functionB <- function(x){
 }
 
 functionC <- function(daten){
-  #deskriptive bivariate Statistik
+  #deskriptive bivariate Statistik zwischen Kategorien
+  #benötigt die ganze CSV
   matrix_fach  <- model.matrix(~ fach -1 , daten)
   matrix_math_lk  <- model.matrix(~ math_lk -1 , daten)
   matrix_inter_prog <- model.matrix(~ inter_prog -1, daten)
@@ -41,3 +42,10 @@ functionC <- function(daten){
   cat("\n")
   print(cor(matrix_fach, matrix_math_lk))
 }
+
+#Funktion D, +Korrelation zwischen metrisch und Dichtonomen Variable
+functionD <- function(metrisch, dichto){
+  dichto_transform <- as.numeric(x)
+  print(cor(metrisch, dichto_transform))
+}
+
