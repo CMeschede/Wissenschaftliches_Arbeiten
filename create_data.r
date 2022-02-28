@@ -1,5 +1,4 @@
 # Aufgabe 1
-set.seed(1234)
 
 interess_math <- function(fach,len_data) {
   inter_math <- 1:len_data
@@ -42,6 +41,7 @@ mathe_lk <- function(fach,len_data) {
 # Default länge für das DataFrame
 len_data = 100
 
+set.seed(1234)
 alter <- round(rnorm(len_data, 25, 2))
 fach <- sample(c("Statistik", "Data Science", "Mathe", "Informatik"),
                len_data, replace = TRUE, prob = c(0.35, 0.35, 0.1, 0.2))
